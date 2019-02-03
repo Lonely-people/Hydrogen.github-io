@@ -1894,7 +1894,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #82ff39;
+  background: #498b7a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3182,8 +3182,8 @@ ul.breadcrumb li+li:last-child {
   }
 }
 body {
-  emming-image: url("/images/emming.jpeg");
-  emming-repeat: no-repeat;
-  emming-attachment: fixed;
-  emming-size: cover;
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
