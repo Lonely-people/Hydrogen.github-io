@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="NULL&#39;s blog">
 <meta property="og:description" content="题目描述小X来到一个雄奇的金字塔挖宝，但是这是一座被诅咒的金字塔，小X必须马上逃离这里，否则小X就会被埋在金字塔里，但他不希望此行落空。 现在小X面前有$N+1$种财宝，每种财宝都有一个价值。第一种财宝重量为0，第二种财宝重量为1，总之第I种财宝重量为$I-1$。现在小X希望拿走$N+M$个物品，但是这$M+N$个物品总重量不能超过N。小X希望能获得最大的价值。你能帮帮他吗？ 由于金字塔跟小X一样">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-04T14:05:53.374Z">
+<meta property="og:updated_time" content="2019-02-04T14:07:16.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="YZOJ P1299 [NOIP福建夏令营]金字塔">
 <meta name="twitter:description" content="题目描述小X来到一个雄奇的金字塔挖宝，但是这是一座被诅咒的金字塔，小X必须马上逃离这里，否则小X就会被埋在金字塔里，但他不希望此行落空。 现在小X面前有$N+1$种财宝，每种财宝都有一个价值。第一种财宝重量为0，第二种财宝重量为1，总之第I种财宝重量为$I-1$。现在小X希望拿走$N+M$个物品，但是这$M+N$个物品总重量不能超过N。小X希望能获得最大的价值。你能帮帮他吗？ 由于金字塔跟小X一样">
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-04 22:05:53" itemprop="dateModified" datetime="2019-02-04T22:05:53+08:00">2019-02-04</time>
+                <time title="修改时间：2019-02-04 22:07:16" itemprop="dateModified" datetime="2019-02-04T22:07:16+08:00">2019-02-04</time>
               
             
           </span>
@@ -471,7 +471,8 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f[i+j]=max(f[j]+a[i]-a[<span class="number">0</span>],f[i+j]);</span><br></pre></td></tr></table></figure>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="comment">//我没用快读模板是因为有负数，所以我就用了scanf</span></span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">3001</span>],f[<span class="number">3001</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++) f[i]=(n+m)*a[<span class="number">0</span>];    <span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n-i;j++)</span><br><span class="line">            f[i+j]=max(f[j]+a[i]-a[<span class="number">0</span>],f[i+j]);    <span class="comment">//动态转移方程</span></span><br><span class="line">    <span class="keyword">return</span> !<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,f[n]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="color-gray-mathfrak-End"><a href="#color-gray-mathfrak-End" class="headerlink" title="$\color{gray}{\mathfrak{End}}$"></a>$\color{gray}{\mathfrak{End}}$</h1>
+<pre><code># $\color{gray}{\mathfrak{End}}$
+</code></pre>
       
     </div>
 
@@ -726,7 +727,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入"><span class="nav-number">4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出"><span class="nav-number">5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据规模与约定"><span class="nav-number">6.</span> <span class="nav-text">数据规模与约定</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#color-gray-mathfrak-End"><span class="nav-number"></span> <span class="nav-text">$\color{gray}{\mathfrak{End}}$</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入"><span class="nav-number">4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出"><span class="nav-number">5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据规模与约定"><span class="nav-number">6.</span> <span class="nav-text">数据规模与约定</span></a></li></ol></div>
             
 
           </div>
