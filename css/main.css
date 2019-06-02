@@ -1894,7 +1894,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9a54c3;
+  background: #e3f99f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3189,4 +3189,14 @@ body {
 }
 .main-inner {
   opacity: 0.8;
+}
+.hider_title {
+  font-family: "Microsoft Yahei";
+  cursor: pointer;
+}
+.close:after {
+  content: "��";
+}
+.open:after {
+  content: "��";
 }
