@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[FJOI2016] 建筑师]]></title>
+    <url>%2F2019%2F08%2F09%2FFJOI2016-%E5%BB%BA%E7%AD%91%E5%B8%88%2F</url>
+    <content type="text"><![CDATA[$40$分乱搞，$DP$ $100$分法$1$ 我们可以用$40$分的做法打一张表，然后找找规律就发现$ans=C^{A+1}{A+B-2} *S^{A+B-2}{n-1}$了。 啥？你说你不会$Stirling$数？ 出门左转具体数学，包教包会 法$2$ 我们理性分析一下 我们可以先挑出最高的位置，直接丢到一边去。 于是就变成变为在一个$n$层的分层图上，每次往下走一层，选择$A+1$或$B+1$或不变。 有$3$种边 第$1$,$2$种边都是$1$条，第$3$种边由$n - 2$条递减到$0$条。 设$f_{i,j}$为从后往前推到第$i$层，选了$j$条改变$A$,$B$的边，选边的方案数。 于是我们就有以下递推式 $f_{i,j}=(i-1)*f_{i-1,j}+f_{i-1,j-1}$ 于是$ans=C^{A+1}{A+B-2}*f{n-1,A+B-2}$ 然后你就会发现$f$的递推式和$Stirling$数一模一样…. 我们预处理一下组合数$C$和$f$就可以通过此题了 代码： 12345678910111213141516171819202122232425#include &lt;iostream&gt;#include &lt;stdio.h&gt;#define reg register#define MAXN 50010#define mod_v 1000000007using namespace std;int T, n, A, B, C[210][110], S[MAXN][210];int main() &#123; C[0][0] = 1; for(reg int i = 1; i &lt;= 200; ++i) &#123; C[i][0] = 1; for(reg int j = 1; j &lt;= i &amp;&amp; j &lt;= 100; ++j) C[i][j] = (C[i - 1][j - 1] + C[i - 1][j]) % mod_v; &#125; S[0][0] = 1; for(reg int i = 1; i &lt;= MAXN - 10; ++i) &#123; for(reg int j = 1; j &lt; i &amp;&amp; j &lt;= 200; ++j) S[i][j] = (S[i - 1][j - 1] + 1ll * (i - 1) * S[i - 1][j]) % mod_v; if(i &lt;= 200) S[i][i] = 1; &#125; cin &gt;&gt; T; while(T--) &#123; cin &gt;&gt; n &gt;&gt; A &gt;&gt; B; cout &lt;&lt; (1ll * C[A + B - 2][A - 1] * S[n - 1][A + B - 2] % mod_v) &lt;&lt; endl; &#125; return 0;&#125;]]></content>
+      <tags>
+        <tag>解题报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HDU1028 Ignatius and the Princess III]]></title>
+    <url>%2F2019%2F07%2F04%2FLuogu%20P2000%20%E6%8B%AF%E6%95%91%E4%B8%96%E7%95%8C%2F</url>
+    <content type="text"><![CDATA[Description给定整数n，求n有多少种划分方式。 solution这题类似于邮票问题 我们可以用$x$的指数表示]]></content>
+      <tags>
+        <tag>解题报告</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[BZOJ2301 [HAOI2001]Problem b]]></title>
     <url>%2F2019%2F07%2F03%2FBZOJ2301-HAOI2001-Problem-b%2F</url>
     <content type="text"><![CDATA[题目链接 求值： $\displaystyle\sum_{i=x}^{n}\sum_{j=y}^{m}[\gcd(i,j)=k]\qquad(1\leqslant T,x,y,n,m,k\leqslant 50000)$ 分析由容斥原理可将原式分成4块处理，每一块式子为 $\displaystyle\sum_{i=1}^{n}\sum_{j=1}^{m}[\gcd(i,j)=k]$ 化简得 $\displaystyle\sum_{i=1}^{\lfloor\frac{n}{k}\rfloor}\sum_{j=1}^{\lfloor\frac{m}{k}\rfloor}[\gcd(i,j)=1]$ 因为当$\gcd(i,j)=1$时对答案有贡献，所以可以替换为$\varepsilon(\gcd(i,j))$，所以原式被化简为 $\displaystyle\sum_{i=1}^{\lfloor\frac{n}{k}\rfloor}\sum_{j=1}^{\lfloor\frac{m}{k}\rfloor}\varepsilon(\gcd(i,j))$ 将$\varepsilon(\gcd(i,j))$用$\text{Dirichlet}$卷积展开得 $\displaystyle\sum_{i=1}^{\lfloor\frac{n}{k}\rfloor}\sum_{j=1}^{\lfloor\frac{m}{k}\rfloor}\sum_{d\mid\gcd(i,j)}\mu(d)$ 变换求和顺序得 $\displaystyle\sum_{d=1}^{\lfloor\frac{n}{k}\rfloor}\mu(d)\sum_{i=1}^{\lfloor\frac{n}{k}\rfloor}d\mid i\sum_{j=1}^{\lfloor\frac{m}{k}\rfloor}d\mid j$ 容易得知$\displaystyle 1\sim\lfloor\frac{n}{k}\rfloor$中有$d$的倍数$\displaystyle\lfloor\frac{n}{kd}\rfloor$个，所以原式被化简为 $\displaystyle\sum_{d=1}^{\lfloor\frac{n}{k}\rfloor}\mu(d)\lfloor\frac{n}{kd}\rfloor\lfloor\frac{m}{kd}\rfloor$ 很明显，化简后的式子可以用数论分块解决(过程中默认$n\leqslant m$) 时间复杂度为$\displaystyle\Theta(N+T\sqrt{n})$ $Code$ 12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;bits/stdc++.h&gt;#define reg register#define MAXN 50010using namespace std;int mu[MAXN], p[MAXN];bool flag[MAXN];inline void init() &#123; // 预处理莫比乌斯函数 int tot = 0; mu[1] = 1; for(reg int i = 2, j; i &lt;= MAXN; ++i) &#123; for(!flag[i] ? p[++tot] = i, mu[i] = -1 : 1, j = 1; j &lt;= tot &amp;&amp; i * p[j] &lt;= MAXN; ++j) &#123; flag[i * p[j]] = 1; if(!(i % p[j])) &#123; mu[i * p[j]] = 0; break; &#125; mu[i * p[j]] = -mu[i]; &#125; &#125; for(reg int i = 1; i &lt;= MAXN; ++i) mu[i] += mu[i - 1];&#125;int solve(int n, int m) &#123; // 数论分块 int res = 0; for(reg int i = 1, j; i &lt;= min(n, m); i = j + 1) j = min(n / (n / i), m / (m / i)), res += (mu[j] - mu[i - 1]) * (n / i) * (m / i); return res;&#125;int main() &#123; int T, a, b, c, d, k; init(); for(scanf("%d", &amp;T); T; T--) &#123; scanf("%d%d%d%d%d", &amp;a, &amp;b, &amp;c, &amp;d, &amp;k); printf("%d\n", solve(b / k, d / k) - solve(b / k, (c - 1) / k) - solve((a - 1) / k, d / k) + solve((a - 1) / k, (c - 1) / k)); &#125; return 0;&#125;]]></content>
