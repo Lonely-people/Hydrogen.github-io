@@ -107,14 +107,18 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="1矩阵树定理用于计算无向图生成树个数，和基尔霍夫矩阵的行列式密切相关。 Part 1 前置知识 $\text{Kirchhoff}$ 矩阵  我们记 $K$ 为 $\text{Kirchhoff}$ 矩阵，并计算出无向图$G$的度数矩阵 $D$ 和邻接矩阵 $A$ ，那么我们同通过 $K=D-A$ 就可以计算出基尔霍夫矩阵。  行列式  定义一个矩阵的行列式为 $\det(A)$ 那么 $\det">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
 <meta property="og:title" content="[学习笔记] 矩阵树定理">
 <meta property="og:url" content="http://yoursite.com/2020/01/29/学习笔记-矩阵树定理/index.html">
 <meta property="og:site_name" content="NULL&#39;s blog">
+<meta property="og:description" content="1矩阵树定理用于计算无向图生成树个数，和基尔霍夫矩阵的行列式密切相关。 Part 1 前置知识 $\text{Kirchhoff}$ 矩阵  我们记 $K$ 为 $\text{Kirchhoff}$ 矩阵，并计算出无向图$G$的度数矩阵 $D$ 和邻接矩阵 $A$ ，那么我们同通过 $K=D-A$ 就可以计算出基尔霍夫矩阵。  行列式  定义一个矩阵的行列式为 $\det(A)$ 那么 $\det">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-29T04:46:45.870Z">
+<meta property="og:updated_time" content="2020-01-29T04:56:19.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[学习笔记] 矩阵树定理">
+<meta name="twitter:description" content="1矩阵树定理用于计算无向图生成树个数，和基尔霍夫矩阵的行列式密切相关。 Part 1 前置知识 $\text{Kirchhoff}$ 矩阵  我们记 $K$ 为 $\text{Kirchhoff}$ 矩阵，并计算出无向图$G$的度数矩阵 $D$ 和邻接矩阵 $A$ ，那么我们同通过 $K=D-A$ 就可以计算出基尔霍夫矩阵。  行列式  定义一个矩阵的行列式为 $\det(A)$ 那么 $\det">
 
 
 
@@ -402,9 +406,13 @@
                 
               
 
-              <time title="创建时间：2020-01-29 12:46:45" itemprop="dateCreated datePublished" datetime="2020-01-29T12:46:45+08:00">2020-01-29</time>
+              <time title="创建时间：2020-01-29 12:46:45 / 修改时间：12:56:19" itemprop="dateCreated datePublished" datetime="2020-01-29T12:46:45+08:00">2020-01-29</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -444,7 +452,42 @@
       
 
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">矩阵树定理用于计算无向图生成树个数，和基尔霍夫矩阵的行列式密切相关。</span><br></pre></td></tr></table></figure>
+<h2 id="Part-1-前置知识"><a href="#Part-1-前置知识" class="headerlink" title="Part 1 前置知识"></a>Part 1 前置知识</h2><ol>
+<li>$\text{Kirchhoff}$ 矩阵</li>
+</ol>
+<p>我们记 $K$ 为 $\text{Kirchhoff}$ 矩阵，并计算出无向图$G$的度数矩阵 $D$ 和邻接矩阵 $A$ ，那么我们同通过 $K=D-A$ 就可以计算出基尔霍夫矩阵。</p>
+<ol start="2">
+<li>行列式</li>
+</ol>
+<p>定义一个矩阵的行列式为 $\det(A)$</p>
+<p>那么 $\det(A) = \displaystyle\sum_{j_1,j_2…j_n}(-1)^v\prod_{i=1}^{n} a_{i,j_i}$</p>
+<p>其中 $v$ 表示序列逆序对的个数</p>
+<ol start="3">
+<li>主子式</li>
+</ol>
+<p>取出矩阵 $B$ 的 $i$ 行 $i$ 列组成的新矩阵 $B’$ 为 $A$ 的 $i$ 阶主子式</p>
+<h2 id="Part-2-矩阵树定理"><a href="#Part-2-矩阵树定理" class="headerlink" title="Part 2 矩阵树定理"></a>Part 2 矩阵树定理</h2><ol>
+<li>定义</li>
+</ol>
+<p>对于一个无向图 $G$ ，它的生成树个数等于其基尔霍夫矩阵矩阵 $K$ 任何一个 $n-1$ 阶主子式的行列式的绝对值。</p>
+<ol start="2">
+<li>基尔霍夫矩阵 $K$ 的性质</li>
+</ol>
+<ul>
+<li><p>$\det(K)=0$</p>
+</li>
+<li><p>如果图是不连通的，则其任意  $n- 1$  阶主子式为 $0$</p>
+</li>
+</ul>
+<p>证明见<a href="https://www.cnblogs.com/cjc030205/p/11790737.html（我不会）" target="_blank" rel="noopener">https://www.cnblogs.com/cjc030205/p/11790737.html（我不会）</a></p>
+<h2 id="Part-3-Binet-Cauchy定理"><a href="#Part-3-Binet-Cauchy定理" class="headerlink" title="Part 3 Binet-Cauchy定理"></a>Part 3 Binet-Cauchy定理</h2><p><del>咕了</del></p>
+<h2 id="Part-4-例题"><a href="#Part-4-例题" class="headerlink" title="Part 4 例题"></a>Part 4 例题</h2><ol>
+<li>$\text{[FJOI2007]}$ 轮状病毒</li>
+</ol>
+<p>解法很多，递推也可以，最直接的解法是矩阵树定理。</p>
+<p>当输入 $n$ 时，容易写出其 $n + 1$ 阶的 $\text{Kirchhoff}$ 矩阵，那么我们求出它的 $n$ 阶子式的行列式即可,其余就是<del>毒瘤</del>的高精度了。</p>
+
       
     </div>
 
@@ -464,6 +507,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+        </div>
       
 
       
@@ -531,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -570,7 +628,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -716,6 +776,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-1-前置知识"><span class="nav-number">1.</span> <span class="nav-text">Part 1 前置知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-2-矩阵树定理"><span class="nav-number">2.</span> <span class="nav-text">Part 2 矩阵树定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-3-Binet-Cauchy定理"><span class="nav-number">3.</span> <span class="nav-text">Part 3 Binet-Cauchy定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-4-例题"><span class="nav-number">4.</span> <span class="nav-text">Part 4 例题</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
